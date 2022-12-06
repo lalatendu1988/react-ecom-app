@@ -12,7 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     ProductListing().then((res) => setProducts(res));
   }, []);
-
+  console.log('demo');
   return (
     <div style={{ backgroundColor: '#e4e5e5' }}>
       <Navbar />
