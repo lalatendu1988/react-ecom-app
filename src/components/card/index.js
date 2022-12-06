@@ -8,19 +8,27 @@ import './index.css';
 
 export default function MultiActionAreaCard(props) {
   const { item } = props;
-  console.log('f');
+
   return (
-    <Card sx={{ maxWidth: 300, minHeight: 300 }}>
+    <Card
+      variant='outlined'
+      sx={{
+        width: '19rem',
+        minHeight: 300,
+        marginRight: '20px',
+        marginBottom: '20px',
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component='img'
-          height='140'
-          image='https://media.vogue.in/wp-content/uploads/2020/01/zara.jpg'
+          height='200'
+          image={item.image}
           alt='green iguana'
         />
         <CardContent>
-          <Typography gutterBottom variant='h6' component='div'>
-            {item.productName}
+          <Typography gutterBottom variant='subtitle1' component='div'>
+            {item.title}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
             MRP ${item.price}
@@ -28,9 +36,7 @@ export default function MultiActionAreaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
-          Add to Cart
-        </Button>
+        <Button variant='contained'>Add to Cart</Button>
       </CardActions>
     </Card>
   );
